@@ -1,0 +1,29 @@
+<%= form_for(@charity) do |f| %>
+  <% if @charity.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@charity.errors.count, "error") %> prohibited this charity from being saved:</h2>
+
+      <ul>
+      <% @charity.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :organization %><br>
+    <%= f.text_field :organization %>
+  </div>
+  <div class="field">
+    <%= f.label :year %><br>
+    <%= f.number_field :year %>
+  </div>
+  <div class="field">
+    <%= f.label :duties %><br>
+    <%= f.text_area :duties %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

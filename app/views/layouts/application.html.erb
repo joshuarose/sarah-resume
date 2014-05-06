@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>SarahResume</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+  <nav class='navbar navbar-default navbar-fixed-top' role='navigation'>
+    <div class='container'>
+      <div class='pull-left'>
+        Sarah Butterworth
+      </div>
+      <ul class="nav nav-tabs pull-right">
+        <li class="active"><%= link_to 'Home',root_path %></li>
+        <li><%= link_to 'Experience', jobs_path %></li>
+        <li><%= link_to 'Charity Work', charities_path %></li>
+      </ul>
+    </div>
+  </nav>
+  <div class='container'>
+    <div class='row'>
+      <%= yield %>
+    </div>
+  </div>
+</body>
+</html>
